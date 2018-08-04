@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Sale } from '../models/sale';
 
 @Component({
   selector: 'app-sales',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SalesComponent implements OnInit {
 
+  model = new Sale();
+  color = 'green';
   constructor() { }
 
   ngOnInit() {
