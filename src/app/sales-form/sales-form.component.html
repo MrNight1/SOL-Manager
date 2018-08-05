@@ -1,4 +1,4 @@
-<form #saleForm="ngForm">
+<form (ngSubmit)="addSale()" #saleForm="ngForm">
   <mat-form-field>
     <input matInput placeholder="Concepto" name="concept" [(ngModel)]="model.concept">
 </mat-form-field>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Sale } from '../models/sale';
+import { SaleService } from '../services/sale.service';
 
 @Component({
   selector: 'app-sales-form',
@@ -9,9 +10,15 @@ import { Sale } from '../models/sale';
 export class SalesFormComponent implements OnInit {
   model = new Sale();
 
-  constructor() { }
+  constructor(private saleService: SaleService) { }
 
   ngOnInit() {
+  }
+
+  addSale() {
+    this.model.paidAmount = 0;
+    this.model.status = 'ACTIVO';
+    this.saleService.addSale(this.model);
   }
 
 }

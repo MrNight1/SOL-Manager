@@ -4,3 +4,7 @@
 .no-pad{
   padding: 0;
 }
+
+mat-card{
+  margin-bottom: 10px;
+}

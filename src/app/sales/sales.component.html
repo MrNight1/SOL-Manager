@@ -10,18 +10,23 @@
   </mat-card-content>
 </mat-card>
 <br>
-<mat-card>
+<mat-card *ngFor="let sale of sales | async">
   <mat-card-header>
-    <mat-card-subtitle>03/08/2018</mat-card-subtitle>
-    <mat-card-title>Activa</mat-card-title>
+    <mat-card-title>{{sale.status}}</mat-card-title>
+    <mat-card-subtitle>{{sale.date.toMillis() | date:'d/MM/yyyy'}} - <i>{{sale.who}}</i></mat-card-subtitle>
   </mat-card-header>
-  <mat-divider></mat-divider>
-  <br>
   <mat-card-content>
-    <p>1 Cellsentials</p>
+    <mat-grid-list [cols]="2" rowHeight="25px">
+      <mat-grid-tile >{{sale.quantity}} x {{sale.concept}}</mat-grid-tile>
+      <mat-grid-tile ><span class="right">{{sale.amount | currency}}</span></mat-grid-tile>
+      <mat-grid-tile >Total pagado</mat-grid-tile>
+      <mat-grid-tile >{{sale.paidAmount | currency}}</mat-grid-tile>
+      <mat-grid-tile >Por pagar</mat-grid-tile>
+      <mat-grid-tile >{{sale.amount - sale.paidAmount | currency}}</mat-grid-tile>
+    </mat-grid-list>
+
   </mat-card-content>
   <mat-card-actions>
-    <i>Who is</i>
     <button mat-button>PAGOS</button>
     <button mat-button>Shalala</button>
   </mat-card-actions>
