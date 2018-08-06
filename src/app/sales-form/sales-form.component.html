@@ -1,0 +1,24 @@
+<form (ngSubmit)="addSale()" #saleForm="ngForm">
+  <mat-form-field>
+    <input matInput placeholder="Concepto" name="concept" [(ngModel)]="model.concept">
+</mat-form-field>
+<mat-form-field>
+  <input matInput placeholder="Monto" name="amount" [(ngModel)]="model.amount">
+</mat-form-field>
+<mat-form-field>
+  <input matInput placeholder="Cantidad" name="quantity" [(ngModel)]="model.quantity">
+</mat-form-field>
+<mat-form-field>
+  <input matInput [matDatepicker]="picker" placeholder="Choose a date" name="date" [(ngModel)]="model.date">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+<mat-form-field>
+  <input matInput placeholder="Nombre del cliente" name="who" [(ngModel)]="model.who">
+</mat-form-field>
+
+
+  <br>TODO: remove this: {{model.concept}}
+
+  <button mat-raised-button type="submit" color="primary">Guardar</button>
+</form>
