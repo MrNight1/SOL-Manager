@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { Observable } from 'rxjs';
 import {map} from 'rxjs/operators';
-import { SaleService } from './sale.service';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +14,14 @@ export class DbserviceService {
     this.db.collection(path).add(item).then(
       (docRef) => {
         console.log('Exito: ', docRef.id);
+      }
+    );
+  }
+
+  updateItem(path: string, item: any) {
+    this.db.doc(path).update(item).then(
+      (docRef) => {
+        console.log('Exito');
       }
     );
   }

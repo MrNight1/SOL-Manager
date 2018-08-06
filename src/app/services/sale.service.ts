@@ -27,4 +27,10 @@ export class SaleService {
       who: sale.who
     });
   }
+  setAsFinished(sale: Sale) {
+    sale.status = 'FINALIZADA';
+    this.db.updateItem('sales/' + sale.id , {
+      status: sale.status
+    });
+  }
 }

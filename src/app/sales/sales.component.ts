@@ -27,4 +27,9 @@ export class SalesComponent implements OnInit {
     );
   }
 
+  setAsFinished(sale: Sale) {
+    console.log('Marcar como pagada! ', sale.id);
+    this.saleService.setAsFinished(sale);
+  }
+
 }
