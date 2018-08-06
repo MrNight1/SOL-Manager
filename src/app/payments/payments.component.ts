@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 import { Observable } from '../../../node_modules/rxjs';
 import { Payment } from '../models/payment';
 import { PaymentService } from '../services/payment.service';
@@ -13,15 +15,20 @@ export class PaymentsComponent implements OnInit {
   model: Payment;
   contador: number;
 
-  constructor(private paymentService: PaymentService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private location: Location,
+    private paymentService: PaymentService) { }
 
   ngOnInit() {
-    this.getPayments();
+    const idSale = this.route.snapshot.paramMap.get('id');
+    console.log('id: ', idSale);
+    this.getPayments(idSale);
     this.getTotalPagos();
   }
 
-  getPayments(): void {
-    this.payments = this.paymentService.getPayments();
+  getPayments(idSale: string): void {
+    this.payments = this.paymentService.getPayments(idSale);
   }
 
   getTotalPagos() {

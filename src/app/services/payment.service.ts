@@ -10,7 +10,16 @@ export class PaymentService {
 
   constructor(private db: DbserviceService) { }
 
-  getPayments(): Observable<Payment[]> {
-    return this.db.getAllItems('loans/FiTDc3Mhzoxwnync9mpA/payments');
+  getPayments(idSale: string): Observable<Payment[]> {
+    return this.db.getAllItems('sales/' + idSale + '/payments');
+  }
+
+  addPay(idSale: string, payment: Payment) {
+    this.db.addItem('sales/' + idSale + '/payments', {
+      amount: +payment.amount,
+      date: payment.date,
+      desc: payment.desc,
+      who: payment.who
+    });
   }
 }

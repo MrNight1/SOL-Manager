@@ -27,7 +27,7 @@
 
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button>PAGOS</button>
+    <button mat-button routerLink="/sales/{{sale.id}}" >PAGOS</button>
     <button mat-button (click)="setAsFinished(sale)">FINALIZADA</button>
   </mat-card-actions>
 
