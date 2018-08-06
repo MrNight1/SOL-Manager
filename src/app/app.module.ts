@@ -47,6 +47,7 @@ import { SalesComponent } from './sales/sales.component';
 import { PaymentFormComponent } from './payment-form/payment-form.component';
 import { SalesFormComponent } from './sales-form/sales-form.component';
 import { PaymentsComponent } from './payments/payments.component';
+import { AppRoutingModule } from './/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -94,7 +95,7 @@ import { PaymentsComponent } from './payments/payments.component';
       MatTableModule,
       MatTabsModule,
       MatToolbarModule,
-      MatTooltipModule, ],
+      MatTooltipModule, AppRoutingModule],
   ],
   providers: [],
   bootstrap: [AppComponent]
