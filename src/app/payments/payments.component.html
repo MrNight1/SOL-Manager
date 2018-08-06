@@ -1,0 +1,15 @@
+<mat-list>
+  <mat-list-item *ngFor="let pay of payments | async">
+    <img matListAvatar src="http://www.cani.com/sites/default/files/sfondi/sfondi-desktop-cani-366.jpg">
+    <h3 matLine>{{pay.desc}}</h3>
+    <p mat-line> {{pay.date.toMillis() | date:'d/MM/yyyy'}} <br>{{pay.who}} </p>
+
+    <span>{{pay.amount | currency}} </span>
+
+    <mat-divider></mat-divider>
+  </mat-list-item>
+  <mat-list-item>
+    <h2 matLine>TOTAL</h2>
+    <h2 class="example-icon">{{contador | currency}}</h2>
+  </mat-list-item>
+</mat-list>
