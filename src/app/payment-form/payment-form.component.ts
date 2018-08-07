@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Payment } from '../models/payment';
 import { PaymentService } from '../services/payment.service';
+import { ActivatedRoute } from '../../../node_modules/@angular/router';
+import { Location } from '../../../node_modules/@angular/common';
 
 @Component({
   selector: 'app-payment-form',
@@ -9,14 +11,21 @@ import { PaymentService } from '../services/payment.service';
 })
 export class PaymentFormComponent implements OnInit {
   model = new Payment();
+  idSale: string;
 
-  constructor(private paymentService: PaymentService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private location: Location,
+    private paymentService: PaymentService) { }
 
   ngOnInit() {
+    this.idSale = this.route.snapshot.paramMap.get('id');
+    console.log('id: ', this.idSale);
   }
 
   addPay() {
-    this.paymentService.addPay('7BBkZ9DiTol2yRyPnQGN', this.model);
+    console.log('click');
+    this.paymentService.addPay(this.idSale, this.model);
   }
 
 }

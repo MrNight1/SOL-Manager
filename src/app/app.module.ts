@@ -48,6 +48,8 @@ import { PaymentFormComponent } from './payment-form/payment-form.component';
 import { SalesFormComponent } from './sales-form/sales-form.component';
 import { PaymentsComponent } from './payments/payments.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { NavegacionComponent } from './navegacion/navegacion.component';
+import { LayoutModule } from '@angular/cdk/layout';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,8 @@ import { AppRoutingModule } from './/app-routing.module';
     SalesComponent,
     PaymentFormComponent,
     SalesFormComponent,
-    PaymentsComponent
+    PaymentsComponent,
+    NavegacionComponent
   ],
   imports: [
     BrowserModule,
@@ -63,6 +66,8 @@ import { AppRoutingModule } from './/app-routing.module';
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    AppRoutingModule,
+    LayoutModule,
 
     [ MatAutocompleteModule,
       MatButtonModule,
@@ -95,7 +100,7 @@ import { AppRoutingModule } from './/app-routing.module';
       MatTableModule,
       MatTabsModule,
       MatToolbarModule,
-      MatTooltipModule, AppRoutingModule],
+      MatTooltipModule, ],
   ],
   providers: [],
   bootstrap: [AppComponent]

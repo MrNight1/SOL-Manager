@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { Observable } from '../../../node_modules/rxjs';
@@ -11,19 +11,17 @@ import { PaymentService } from '../services/payment.service';
   styleUrls: ['./payments.component.css']
 })
 export class PaymentsComponent implements OnInit {
+  @Input() idSale: string;
+
   payments: Observable<Payment[]>;
   model: Payment;
   contador: number;
 
   constructor(
-    private route: ActivatedRoute,
-    private location: Location,
     private paymentService: PaymentService) { }
 
   ngOnInit() {
-    const idSale = this.route.snapshot.paramMap.get('id');
-    console.log('id: ', idSale);
-    this.getPayments(idSale);
+    this.getPayments(this.idSale);
     this.getTotalPagos();
   }
 
