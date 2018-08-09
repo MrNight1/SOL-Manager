@@ -1,0 +1,27 @@
+.main-contenedor {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+mat-toolbar {
+  z-index: 2;
+}
+mat-sidenav{
+  width: 230px;
+}
+mat-sidenav-content {
+  padding: 10px;
+}
+
+.contenedor {
+  /*position: fixed;
+  top: 60px;
+  left: 0;
+  height: 100%;
+  width: 100%;*/
+  flex: 1;
+}

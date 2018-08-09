@@ -18,11 +18,11 @@ export class SaleService {
 
   addSale(sale: Sale) {
     this.db.addItem('sales', {
-      amount: sale.amount,
+      amount: +sale.amount,
       concept: sale.concept,
       date: sale.date,
-      paidAmount: sale.paidAmount,
-      quantity: sale.quantity,
+      paidAmount: +sale.paidAmount,
+      quantity: +sale.quantity,
       status: sale.status,
       who: sale.who
     });
