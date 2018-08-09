@@ -48,7 +48,6 @@ import { PaymentFormComponent } from './payment-form/payment-form.component';
 import { SalesFormComponent } from './sales-form/sales-form.component';
 import { PaymentsComponent } from './payments/payments.component';
 import { AppRoutingModule } from './/app-routing.module';
-import { NavegacionComponent } from './navegacion/navegacion.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { NavResponsivoComponent } from './nav-responsivo/nav-responsivo.component';
 
@@ -59,7 +58,6 @@ import { NavResponsivoComponent } from './nav-responsivo/nav-responsivo.componen
     PaymentFormComponent,
     SalesFormComponent,
     PaymentsComponent,
-    NavegacionComponent,
     NavResponsivoComponent
   ],
   imports: [
