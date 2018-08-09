@@ -1,0 +1,21 @@
+<div class="main-contenedor">
+  <mat-toolbar color="primary">
+    <button mat-icon-button (click)="snav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    SOL Manager
+  </mat-toolbar>
+  <mat-sidenav-container class="contenedor">
+    <mat-sidenav #snav mode="over" closed>
+      <mat-nav-list>
+        <a mat-list-item routerLink="/sales">Ventas</a>
+        <a mat-list-item routerLink="/new">Agregar venta</a>
+        <a mat-list-item routerLink="/sales">Ventas</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+      <br>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

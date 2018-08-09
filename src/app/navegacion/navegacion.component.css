@@ -4,9 +4,11 @@
 
 .sidenav {
   width: 200px;
+  left: 0px;
 }
 
 .mat-toolbar.mat-primary {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
 }

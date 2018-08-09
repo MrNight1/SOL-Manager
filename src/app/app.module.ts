@@ -50,6 +50,7 @@ import { PaymentsComponent } from './payments/payments.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { NavegacionComponent } from './navegacion/navegacion.component';
 import { LayoutModule } from '@angular/cdk/layout';
+import { NavResponsivoComponent } from './nav-responsivo/nav-responsivo.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { LayoutModule } from '@angular/cdk/layout';
     PaymentFormComponent,
     SalesFormComponent,
     PaymentsComponent,
-    NavegacionComponent
+    NavegacionComponent,
+    NavResponsivoComponent
   ],
   imports: [
     BrowserModule,
