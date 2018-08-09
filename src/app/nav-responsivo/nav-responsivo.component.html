@@ -1,16 +1,44 @@
 <div class="main-contenedor">
-  <mat-toolbar color="primary">
+  <mat-toolbar color="primary" class="mat-elevation-z4">
     <button mat-icon-button (click)="snav.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
     SOL Manager
   </mat-toolbar>
   <mat-sidenav-container class="contenedor">
-    <mat-sidenav #snav mode="over" closed>
+    <mat-sidenav #snav mode="push" closed>
       <mat-nav-list>
-        <a mat-list-item routerLink="/sales">Ventas</a>
-        <a mat-list-item routerLink="/new">Agregar venta</a>
-        <a mat-list-item routerLink="/sales">Ventas</a>
+        <h3 mat-subheader>Sales</h3>
+        <mat-list-item>
+          <mat-icon mat-list-icon>shopping_cart</mat-icon>
+          <a routerLink="/new">Agregar nueva venta</a>
+        </mat-list-item>
+        <mat-list-item>
+            <mat-icon mat-list-icon>list</mat-icon>
+            <a routerLink="/sales">Lista de ventas</a>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+
+        <h3 mat-subheader>Owes</h3>
+        <mat-list-item>
+          <mat-icon mat-list-icon>shopping_cart</mat-icon>
+          <a routerLink="/new">Agregar nueva venta</a>
+        </mat-list-item>
+        <mat-list-item>
+            <mat-icon mat-list-icon>list</mat-icon>
+            <a routerLink="/sales">Lista de ventas</a>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+
+        <h3 mat-subheader>Loans</h3>
+        <mat-list-item>
+          <mat-icon mat-list-icon>shopping_cart</mat-icon>
+          <a routerLink="/new">Agregar nueva venta</a>
+        </mat-list-item>
+        <mat-list-item>
+            <mat-icon mat-list-icon>list</mat-icon>
+            <a routerLink="/sales">Lista de ventas</a>
+        </mat-list-item>
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
