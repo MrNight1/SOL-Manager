@@ -1,4 +1,5 @@
-<p>Lista de sales</p>
+<mat-toolbar color="primary">Lista de ventas</mat-toolbar>
+<br><br><br><br>
 <mat-card class="no-pad">
   <mat-card-content>
     <mat-grid-list [cols]="2" rowHeight="20px">
@@ -13,7 +14,7 @@
 <mat-card *ngFor="let sale of sales | async">
   <mat-card-header>
     <mat-card-title>{{sale.status}}</mat-card-title>
-    <!-- mat-card-subtitle>{{sale.date.toMillis() | date:'d/MM/yyyy'}} - <i>{{sale.who}}</i></mat-card-subtitle -->
+    <mat-card-subtitle>{{sale.date.toMillis() | date:'d/MM/yyyy'}} - <i>{{sale.who}}</i></mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
     <mat-grid-list [cols]="2" rowHeight="25px">
@@ -27,7 +28,7 @@
 
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button>PAGOS</button>
+    <button mat-button routerLink="/sales/{{sale.id}}" >PAGOS</button>
     <button mat-button (click)="setAsFinished(sale)">FINALIZADA</button>
   </mat-card-actions>
 

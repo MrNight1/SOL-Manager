@@ -47,6 +47,9 @@ import { SalesComponent } from './sales/sales.component';
 import { PaymentFormComponent } from './payment-form/payment-form.component';
 import { SalesFormComponent } from './sales-form/sales-form.component';
 import { PaymentsComponent } from './payments/payments.component';
+import { AppRoutingModule } from './/app-routing.module';
+import { LayoutModule } from '@angular/cdk/layout';
+import { NavResponsivoComponent } from './nav-responsivo/nav-responsivo.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +57,8 @@ import { PaymentsComponent } from './payments/payments.component';
     SalesComponent,
     PaymentFormComponent,
     SalesFormComponent,
-    PaymentsComponent
+    PaymentsComponent,
+    NavResponsivoComponent
   ],
   imports: [
     BrowserModule,
@@ -62,6 +66,8 @@ import { PaymentsComponent } from './payments/payments.component';
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    AppRoutingModule,
+    LayoutModule,
 
     [ MatAutocompleteModule,
       MatButtonModule,
