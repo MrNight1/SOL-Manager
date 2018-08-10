@@ -50,6 +50,8 @@ import { PaymentsComponent } from './payments/payments.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { LayoutModule } from '@angular/cdk/layout';
 import { NavResponsivoComponent } from './nav-responsivo/nav-responsivo.component';
+import { OwesFormComponent } from './owes-form/owes-form.component';
+import { OwesComponent } from './owes/owes.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,9 @@ import { NavResponsivoComponent } from './nav-responsivo/nav-responsivo.componen
     PaymentFormComponent,
     SalesFormComponent,
     PaymentsComponent,
-    NavResponsivoComponent
+    NavResponsivoComponent,
+    OwesFormComponent,
+    OwesComponent
   ],
   imports: [
     BrowserModule,

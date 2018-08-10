@@ -1,12 +1,17 @@
-<form (ngSubmit)="addPay()" #saleForm="ngForm">
+<form (ngSubmit)="addOwe()" #saleForm="ngForm">
   <mat-form-field>
-    <input matInput placeholder="Concepto" name="concept" [(ngModel)]="model.desc">
+    <input matInput placeholder="Concepto" name="concept" [(ngModel)]="model.concept">
     <mat-icon matSuffix>description</mat-icon>
   </mat-form-field>
   <br>
   <mat-form-field>
-    <input matInput placeholder="Monto" name="amount" [(ngModel)]="model.amount" class="right-align">
+    <input matInput placeholder="Monto" name="amount" [(ngModel)]="model.amount">
     <span matPrefix>$&nbsp;&nbsp;</span>
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input matInput placeholder="Cantidad" name="quantity" [(ngModel)]="model.quantity">
+    <mat-icon matSuffix>playlist_add</mat-icon>
   </mat-form-field>
   <br>
   <mat-form-field>
@@ -16,13 +21,9 @@
   </mat-form-field>
   <br>
   <mat-form-field>
-    <input matInput placeholder="Nombre del cliente" name="who" [(ngModel)]="model.who">
+    <input matInput placeholder="A quién" name="who" [(ngModel)]="model.who">
     <mat-icon matSuffix>account_circle</mat-icon>
   </mat-form-field>
   <br>
-
   <button mat-raised-button type="submit" color="primary">Guardar</button>
 </form>
-
-<br>
-<app-payments [idSale]="idSale" [tipo]="tipo"></app-payments>

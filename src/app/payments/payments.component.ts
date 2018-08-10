@@ -12,6 +12,7 @@ import { PaymentService } from '../services/payment.service';
 })
 export class PaymentsComponent implements OnInit {
   @Input() idSale: string;
+  @Input() tipo: string;
 
   payments: Observable<Payment[]>;
   model: Payment;
@@ -21,12 +22,12 @@ export class PaymentsComponent implements OnInit {
     private paymentService: PaymentService) { }
 
   ngOnInit() {
-    this.getPayments(this.idSale);
+    this.getPayments(this.tipo, this.idSale);
     this.getTotalPagos();
   }
 
-  getPayments(idSale: string): void {
-    this.payments = this.paymentService.getPayments(idSale);
+  getPayments(tipo: string, idSale: string): void {
+    this.payments = this.paymentService.getPayments(tipo, idSale);
   }
 
   getTotalPagos() {

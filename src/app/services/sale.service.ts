@@ -10,14 +10,14 @@ export class SaleService {
 
   constructor(private db: DbserviceService) { }
 
-  getSales(): Observable<Sale[]> {
+  getSales(model: Sale): Observable<Sale[]> {
     let sales: Observable<Sale[]>;
-    sales = this.db.getAllItems('sales');
+    sales = this.db.getAllItems(model.type);
     return sales;
   }
 
   addSale(sale: Sale) {
-    this.db.addItem('sales', {
+    this.db.addItem(sale.type, {
       amount: +sale.amount,
       concept: sale.concept,
       date: sale.date,
@@ -29,7 +29,7 @@ export class SaleService {
   }
   setAsFinished(sale: Sale) {
     sale.status = 'FINALIZADA';
-    this.db.updateItem('sales/' + sale.id , {
+    this.db.updateItem(sale.type + '/' + sale.id , {
       status: sale.status
     });
   }

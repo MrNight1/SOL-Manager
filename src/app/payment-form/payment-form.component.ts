@@ -12,6 +12,7 @@ import { Location } from '../../../node_modules/@angular/common';
 export class PaymentFormComponent implements OnInit {
   model = new Payment();
   idSale: string;
+  tipo: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -20,12 +21,14 @@ export class PaymentFormComponent implements OnInit {
 
   ngOnInit() {
     this.idSale = this.route.snapshot.paramMap.get('id');
+    this.tipo   = this.route.snapshot.paramMap.get('tipo');
     console.log('id: ', this.idSale);
+    console.log('id: ', this.tipo);
   }
 
   addPay() {
     console.log('click');
-    this.paymentService.addPay(this.idSale, this.model);
+    this.paymentService.addPay(this.tipo, this.idSale, this.model);
   }
 
 }
