@@ -11,15 +11,16 @@ export class PaymentService {
 
   constructor(private db: DbserviceService, private dbBatch: AngularFirestore) { }
 
-  getPayments(idSale: string): Observable<Payment[]> {
-    return this.db.getAllItems('sales/' + idSale + '/payments');
+  getPayments(tipo: string, idSale: string): Observable<Payment[]> {
+    console.log('Pay service tipo: ', tipo);
+    return this.db.getAllItems(tipo + '/' + idSale + '/payments');
   }
 
-  addPay(idSale: string, payment: Payment) {
+  addPay(tipo: string, idSale: string, payment: Payment) {
     const dbTrans = this.dbBatch.firestore;
-    const saleDoc = dbTrans.doc('sales/' + idSale);
+    const saleDoc = dbTrans.doc(tipo + '/' + idSale);
 
-    this.db.addItem('sales/' + idSale + '/payments', {
+    this.db.addItem(tipo + '/' + idSale + '/payments', {
       amount: +payment.amount,
       date: payment.date,
       desc: payment.desc,

@@ -7,4 +7,5 @@ export class Sale {
   quantity: number;
   status: string;
   who: string;
+  type: string; // sales, owes or loans
 }

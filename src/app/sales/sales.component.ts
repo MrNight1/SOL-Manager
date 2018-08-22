@@ -15,11 +15,12 @@ export class SalesComponent implements OnInit {
   constructor(private saleService: SaleService) { }
 
   ngOnInit() {
+    this.model.type = 'sales';
     this.getSales();
   }
 
   getSales(): void {
-    this.sales = this.saleService.getSales();
+    this.sales = this.saleService.getSales(this.model);
     this.sales.subscribe(
       result => {
         console.log('RESULT: ', result);
@@ -28,6 +29,7 @@ export class SalesComponent implements OnInit {
   }
 
   setAsFinished(sale: Sale) {
+    sale.type = 'sales';
     console.log('Marcar como pagada! ', sale.id);
     this.saleService.setAsFinished(sale);
   }

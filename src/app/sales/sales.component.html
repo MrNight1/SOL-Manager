@@ -1,4 +1,4 @@
-<mat-toolbar color="primary">Lista de ventas</mat-toolbar>
+<mat-toolbar color="primary">Sales > Lista</mat-toolbar>
 <br><br><br><br>
 <mat-card class="no-pad">
   <mat-card-content>
@@ -28,7 +28,7 @@
 
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button routerLink="/sales/{{sale.id}}" >PAGOS</button>
+    <button mat-button routerLink="/payments/sales/{{sale.id}}" >PAGOS</button>
     <button mat-button (click)="setAsFinished(sale)">FINALIZADA</button>
   </mat-card-actions>
 

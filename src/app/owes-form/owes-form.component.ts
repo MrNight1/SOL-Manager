@@ -3,20 +3,20 @@ import { Sale } from '../models/sale';
 import { SaleService } from '../services/sale.service';
 
 @Component({
-  selector: 'app-sales-form',
-  templateUrl: './sales-form.component.html',
-  styleUrls: ['./sales-form.component.css']
+  selector: 'app-owes-form',
+  templateUrl: './owes-form.component.html',
+  styleUrls: ['./owes-form.component.css']
 })
-export class SalesFormComponent implements OnInit {
+export class OwesFormComponent implements OnInit {
   model = new Sale();
 
   constructor(private saleService: SaleService) { }
 
   ngOnInit() {
-    this.model.type = 'sales';
+    this.model.type = 'owes';
   }
 
-  addSale() {
+  addOwe() {
     this.model.paidAmount = 0;
     this.model.status = 'ACTIVO';
     this.saleService.addSale(this.model);

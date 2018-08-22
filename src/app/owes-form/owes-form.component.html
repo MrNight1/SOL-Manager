@@ -1,6 +1,6 @@
-<mat-toolbar color="primary">Sales > Nueva</mat-toolbar>
+<mat-toolbar color="warn">Owes > Nueva</mat-toolbar>
 <br><br><br><br>
-<form (ngSubmit)="addSale()" #saleForm="ngForm">
+<form (ngSubmit)="addOwe()" #saleForm="ngForm">
   <mat-form-field>
     <input matInput placeholder="Concepto" name="concept" [(ngModel)]="model.concept">
     <mat-icon matSuffix>description</mat-icon>
@@ -23,7 +23,7 @@
   </mat-form-field>
   <br>
   <mat-form-field>
-    <input matInput placeholder="Nombre del cliente" name="who" [(ngModel)]="model.who">
+    <input matInput placeholder="A quién" name="who" [(ngModel)]="model.who">
     <mat-icon matSuffix>account_circle</mat-icon>
   </mat-form-field>
   <br>
