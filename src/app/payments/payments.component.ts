@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { Observable } from '../../../node_modules/rxjs';
+import { Observable } from 'rxjs';
 import { Payment } from '../models/payment';
 import { PaymentService } from '../services/payment.service';
 

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Payment } from '../models/payment';
 import { PaymentService } from '../services/payment.service';
-import { ActivatedRoute } from '../../../node_modules/@angular/router';
-import { Location } from '../../../node_modules/@angular/common';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-payment-form',
