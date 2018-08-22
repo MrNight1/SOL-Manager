@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { DbserviceService } from './dbservice.service';
-import { Observable } from '../../../node_modules/rxjs';
+import { Observable } from 'rxjs';
 import { Sale } from '../models/sale';
 
 @Injectable({
