@@ -13,6 +13,7 @@ export class PaymentFormComponent implements OnInit {
   model = new Payment();
   idSale: string;
   tipo: string;
+  colorTool: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -22,6 +23,17 @@ export class PaymentFormComponent implements OnInit {
   ngOnInit() {
     this.idSale = this.route.snapshot.paramMap.get('id');
     this.tipo   = this.route.snapshot.paramMap.get('tipo');
+    switch (this.tipo) {
+      case 'sales':
+        this.colorTool = 'primary';
+        break;
+      case 'owes' :
+        this.colorTool = 'warn';
+        break;
+      case 'loans':
+        this.colorTool = 'accent';
+        break;
+    }
     console.log('id: ', this.idSale);
     console.log('id: ', this.tipo);
   }

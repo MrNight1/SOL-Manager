@@ -1,6 +1,6 @@
-<mat-toolbar color="warn">Owes > Nueva</mat-toolbar>
-<br><br><br><br>
-<form (ngSubmit)="addOwe()" #saleForm="ngForm">
+<mat-toolbar color="accent">Loans > Nueva</mat-toolbar>
+<br><br><br>
+<form (ngSubmit)="addLoan()" #saleForm="ngForm">
   <mat-form-field>
     <input matInput placeholder="Concepto" name="concept" [(ngModel)]="model.concept">
     <mat-icon matSuffix>description</mat-icon>
@@ -27,5 +27,5 @@
     <mat-icon matSuffix>account_circle</mat-icon>
   </mat-form-field>
   <br>
-  <button mat-raised-button type="submit" color="warn">Guardar</button>
+  <button mat-raised-button type="submit" color="accent">Guardar</button>
 </form>

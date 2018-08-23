@@ -33,11 +33,11 @@
         <h3 mat-subheader>Loans</h3>
         <mat-list-item>
           <mat-icon mat-list-icon>shopping_cart</mat-icon>
-          <a routerLink="/new">Agregar nueva venta</a>
+          <a routerLink="/newLoan">Agregar nuevo prestamo</a>
         </mat-list-item>
         <mat-list-item>
             <mat-icon mat-list-icon>list</mat-icon>
-            <a routerLink="/sales">Lista de ventas</a>
+            <a routerLink="/loans">Lista de prestamos</a>
         </mat-list-item>
         <mat-divider></mat-divider>
 
@@ -50,6 +50,8 @@
     <mat-sidenav-content>
       <router-outlet></router-outlet>
       <br>
+      <app-footer></app-footer>
+      <br><br><br><br><br><br><br><br><br>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>

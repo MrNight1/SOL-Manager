@@ -1,0 +1,20 @@
+img{
+  width: 163.8px;
+  height: 74.8px;
+}
+
+.pie{
+  background-color: dimgray;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.copyright{
+  color: white;
+  text-align: center;
+  padding: 5px;
+  margin: 0px;
+}

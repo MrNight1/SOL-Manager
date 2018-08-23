@@ -52,6 +52,9 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { NavResponsivoComponent } from './nav-responsivo/nav-responsivo.component';
 import { OwesFormComponent } from './owes-form/owes-form.component';
 import { OwesComponent } from './owes/owes.component';
+import { LoansComponent } from './loans/loans.component';
+import { LoansFormComponent } from './loans-form/loans-form.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +65,10 @@ import { OwesComponent } from './owes/owes.component';
     PaymentsComponent,
     NavResponsivoComponent,
     OwesFormComponent,
-    OwesComponent
+    OwesComponent,
+    LoansComponent,
+    LoansFormComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

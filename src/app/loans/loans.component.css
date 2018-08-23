@@ -1,12 +1,16 @@
-.right-align {
+.right{
   text-align: right;
 }
+.no-pad{
+  padding: 0;
+}
+
+mat-card{
+  margin-bottom: 10px;
+}
+
 mat-toolbar {
   position: absolute;
   left: 0;
   top: 0;
-}
-
-.capitalize {
-  text-transform: capitalize;
 }
