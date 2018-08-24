@@ -9,6 +9,7 @@ import { OwesFormComponent } from './owes-form/owes-form.component';
 import { OwesComponent } from './owes/owes.component';
 import { LoansFormComponent } from './loans-form/loans-form.component';
 import { LoansComponent } from './loans/loans.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/sales', pathMatch: 'full' },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'owes', component: OwesComponent },
   { path: 'newLoan', component: LoansFormComponent },
   { path: 'loans', component: LoansComponent },
+  { path: 'login', component: LoginComponent},
 ];
 
 @NgModule({

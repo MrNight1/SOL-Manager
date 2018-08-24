@@ -6,6 +6,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 // For Firebase
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 
 // For Angular-Material
@@ -55,6 +56,7 @@ import { OwesComponent } from './owes/owes.component';
 import { LoansComponent } from './loans/loans.component';
 import { LoansFormComponent } from './loans-form/loans-form.component';
 import { FooterComponent } from './footer/footer.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +70,8 @@ import { FooterComponent } from './footer/footer.component';
     OwesComponent,
     LoansComponent,
     LoansFormComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -76,6 +79,7 @@ import { FooterComponent } from './footer/footer.component';
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    AngularFireAuthModule, // needed for auth features
     AppRoutingModule,
     LayoutModule,
 
