@@ -23,6 +23,16 @@ export class SalesComponent implements OnInit {
     this.sales = this.saleService.getSales(this.model);
     this.sales.subscribe(
       result => {
+
+        result.forEach(element => {
+          if (element.status === 'FINALIZADA') {
+            console.log('color verde');
+            element.color = 'blue';
+          } else {
+            console.log('color blue');
+            element.color = '';
+          }
+        });
         console.log('RESULT: ', result);
       }
     );

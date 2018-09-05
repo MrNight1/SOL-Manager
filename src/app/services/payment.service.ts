@@ -3,13 +3,14 @@ import { DbserviceService } from './dbservice.service';
 import { Observable } from 'rxjs';
 import { Payment } from '../models/payment';
 import { AngularFirestore } from 'angularfire2/firestore';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PaymentService {
 
-  constructor(private db: DbserviceService, private dbBatch: AngularFirestore) { }
+  constructor(private db: DbserviceService, private dbBatch: AngularFirestore, private authService: AuthService) { }
 
   getPayments(tipo: string, idSale: string): Observable<Payment[]> {
     console.log('Pay service tipo: ', tipo);
@@ -18,7 +19,7 @@ export class PaymentService {
 
   addPay(tipo: string, idSale: string, payment: Payment) {
     const dbTrans = this.dbBatch.firestore;
-    const saleDoc = dbTrans.doc(tipo + '/' + idSale);
+    const saleDoc = dbTrans.doc('usuarios/' + this.authService.getToken() + '/' + tipo + '/' + idSale);
 
     this.db.addItem(tipo + '/' + idSale + '/payments', {
       amount: +payment.amount,

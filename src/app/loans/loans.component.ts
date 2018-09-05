@@ -30,7 +30,7 @@ export class LoansComponent implements OnInit {
   }
 
   setAsFinished(loan: Sale) {
-    loan.type = 'owes';
+    loan.type = 'loans';
     console.log('Marcar como pagada! ', loan.id);
     this.oweService.setAsFinished(loan);
   }

@@ -11,7 +11,7 @@
   </mat-card-content>
 </mat-card>
 <br>
-<mat-card *ngFor="let sale of sales | async">
+<mat-card *ngFor="let sale of sales | async" >
   <mat-card-header>
     <mat-card-title>{{sale.status}}</mat-card-title>
     <mat-card-subtitle>{{sale.date.toMillis() | date:'d/MM/yyyy'}} - <i>{{sale.who}}</i></mat-card-subtitle>

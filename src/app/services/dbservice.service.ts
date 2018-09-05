@@ -2,16 +2,17 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { Observable } from 'rxjs';
 import {map} from 'rxjs/operators';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DbserviceService {
 
-  constructor(private db: AngularFirestore) { }
+  constructor(private db: AngularFirestore, private authService: AuthService) { }
 
   addItem(path: string, item: any) {
-    this.db.collection(path).add(item).then(
+    this.db.collection('usuarios/' + this.authService.getToken() + '/' + path).add(item).then(
       (docRef) => {
         console.log('Exito: ', docRef.id);
       }
@@ -19,7 +20,7 @@ export class DbserviceService {
   }
 
   updateItem(path: string, item: any) {
-    this.db.doc(path).update(item).then(
+    this.db.doc('usuarios/' + this.authService.getToken() + '/' + path).update(item).then(
       (docRef) => {
         console.log('Exito');
       }
@@ -37,7 +38,9 @@ export class DbserviceService {
     });*/
 
     // This is another way for getting but it includes id documents
-    items = this.db.collection(path).snapshotChanges().pipe(map(
+    const collRef = this.db.collection('usuarios/' + this.authService.getToken() + '/' + path,
+      ref => ref.orderBy('date', 'desc'));
+    items = collRef.snapshotChanges().pipe(map(
       changes => {
         return changes.map( a => {
           const data = a.payload.doc.data();

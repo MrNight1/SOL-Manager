@@ -8,4 +8,5 @@ export class Sale {
   status: string;
   who: string;
   type: string; // sales, owes or loans
+  color: string;
 }
