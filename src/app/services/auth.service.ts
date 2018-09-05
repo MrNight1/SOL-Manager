@@ -1,13 +1,15 @@
-import { Injectable } from '@angular/core';
+import { Injectable, NgZone } from '@angular/core';
 import * as firebase from 'firebase/app';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(public afAuth: AngularFireAuth) { }
+  constructor(public afAuth: AngularFireAuth,  private router: Router, private ngZone: NgZone) { }
 
   doLoginGoogle() {
     // For firestore
@@ -45,6 +47,7 @@ export class AuthService {
         }).catch( (error) => {
           console.error('ERROR: ', error);
         });
+        this.ngZone.run(() => this.router.navigate(['/sales']));
       })
       .catch( (err) => {
         console.log('Error: ', err);
@@ -59,7 +62,25 @@ export class AuthService {
     return localStorage.getItem('LoggedInUser');
   }
 
+  logout () {
+    localStorage.removeItem('LoggedInUser');
+    this.ngZone.run(() => this.router.navigate(['/login']));
+  }
+
   isLoggednIn() {
     return this.getToken() !== null;
+    /*let bandera: Observable<boolean>;
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        // User is signed in.
+        console.log('Authenticado como: ', user.uid);
+        bandera = new Observable(true);
+      } else {
+        // No user is signed in.
+        console.log('NO Authenticado ');
+        bandera = false;
+      }
+    });*/
+
   }
 }

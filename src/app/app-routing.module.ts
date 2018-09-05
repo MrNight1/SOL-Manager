@@ -10,17 +10,18 @@ import { OwesComponent } from './owes/owes.component';
 import { LoansFormComponent } from './loans-form/loans-form.component';
 import { LoansComponent } from './loans/loans.component';
 import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/sales', pathMatch: 'full' },
-  { path: 'sales', component: SalesComponent},
-  { path: 'payments/:tipo/:id', component: PaymentFormComponent },
-  { path: 'new', component: SalesFormComponent },
-  { path: 'newOwe', component: OwesFormComponent },
-  { path: 'owes', component: OwesComponent },
-  { path: 'newLoan', component: LoansFormComponent },
-  { path: 'loans', component: LoansComponent },
-  { path: 'login', component: LoginComponent},
+  { canActivate: [AuthGuard], path: 'sales',   component: SalesComponent     },
+  { canActivate: [AuthGuard], path: 'new',     component: SalesFormComponent },
+  { canActivate: [AuthGuard], path: 'newOwe',  component: OwesFormComponent  },
+  { canActivate: [AuthGuard], path: 'owes',    component: OwesComponent      },
+  { canActivate: [AuthGuard], path: 'newLoan', component: LoansFormComponent },
+  { canActivate: [AuthGuard], path: 'loans',   component: LoansComponent     },
+  { canActivate: [AuthGuard], path: 'payments/:tipo/:id', component: PaymentFormComponent },
+  { path: 'login',   component: LoginComponent },
 ];
 
 @NgModule({
