@@ -30,7 +30,7 @@ export class DbserviceService {
   getAllItems(path: string): Observable<any[]> {
     let items: Observable<any[]>;
 
-    // This is one way for getting data without documents id
+    // // This is one way for getting data without documents id
 
     /*this.items = af.collection('eventos').valueChanges();
     this.items.subscribe(result => {
