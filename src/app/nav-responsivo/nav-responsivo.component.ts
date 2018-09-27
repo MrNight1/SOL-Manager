@@ -11,6 +11,7 @@ export class NavResponsivoComponent implements OnInit {
   constructor(private authService: AuthService) { }
 
   ngOnInit() {
+
   }
 
   logout(): void {

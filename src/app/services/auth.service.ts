@@ -3,6 +3,7 @@ import * as firebase from 'firebase/app';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -82,5 +83,11 @@ export class AuthService {
       }
     });*/
 
+  }
+
+  getSales(): Observable<User> {
+    let sales: Observable<User>;
+    // sales = this.db.getAllItems();
+    return sales;
   }
 }
